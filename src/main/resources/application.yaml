@@ -1,0 +1,16 @@
+#docket notes :
+# start db : docker compose up -d
+# stop db : docker compose down
+# Stop dan hapus container + volume sekaligus: docker-compose down -v
+
+spring:
+  application:
+    name: simplecrud-app
+  profiles:
+    active: local
+  web:
+    error:
+      include-message: always
+
+server:
+  port: 8080
