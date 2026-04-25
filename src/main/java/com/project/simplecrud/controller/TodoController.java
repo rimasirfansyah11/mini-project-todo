@@ -23,21 +23,25 @@ public class TodoController {
     private final PostUpdateTodoService postUpdateTodoService;
     private final PostDeleteTodoService postDeleteTodoService;
 
+    //create new todo
     @PostMapping("/create")
     public PostCreateTodoResponse create(@RequestBody PostCreateTodoRequest request) {
         return postCreateTodoService.execute(request);
     }
 
+    //get all todo
     @GetMapping("/get-all")
     public GetAllTodoListResponse getAll() {
         return getAllTodoListService.getAllTodoList();
     }
 
+    //update todo by id
     @PostMapping("/update")
     public ResponseEntity<Void> update(@RequestBody PostUpdateTodoRequest request) {
         return postUpdateTodoService.execute(request);
     }
 
+    //soft delete todo
     @PostMapping("/delete")
     public ResponseEntity<Void> delete(@RequestBody PostDeleteTodoRequest request) {
         return postDeleteTodoService.execute(request);
