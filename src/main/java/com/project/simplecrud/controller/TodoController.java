@@ -39,7 +39,7 @@ public class TodoController {
     }
 
     @PostMapping("/delete")
-    public ResponseEntity<Void> delete(PostDeleteTodoRequest request) {
+    public ResponseEntity<Void> delete(@RequestBody PostDeleteTodoRequest request) {
         return postDeleteTodoService.execute(request);
     }
 }
